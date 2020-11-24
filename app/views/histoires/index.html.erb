@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Histoires</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titre</th>
+      <th>Contenu</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @histoires.each do |histoire| %>
+      <tr>
+        <td><%= histoire.titre %></td>
+        <td><%= histoire.contenu %></td>
+        <td><%= link_to 'Show', histoire %></td>
+        <td><%= link_to 'Edit', edit_histoire_path(histoire) %></td>
+        <td><%= link_to 'Destroy', histoire, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Histoire', new_histoire_path %>
